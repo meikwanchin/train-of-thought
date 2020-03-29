@@ -13,33 +13,27 @@
             padding: 0;
         }
 
-        .nav li {
-            width: 210px;
-            line-height: 50px;
-            text-align: center;
+        .nav a {
+            padding: 10px 30px;
             justify-content: center;
             border-left: 1px solid black;
-        }
-
-        .social-icon i {
-            line-height: 22px;
-            padding: 0 4px;
-        }
-
-        .nav a {
             text-decoration: none;
             font-size: 14px;
             color: black;
-            padding: 10px 0 10px 0;
             font-family: sans-serif;
         }
 
-        li .active {
+        .social-icon a {
+            border: none;
+            padding: 10px 8px;
+        }
+
+        .nav a.active {
             color: hotpink;
         }
 
 
-        .nav li a:hover:not(.active) {
+        .nav a:hover:not(.active) {
             color: hotpink;
         }
 
@@ -51,44 +45,120 @@
             font-size: 14px;
         }
 
-        .mini-card content:hover h4{
+        .mini-card content:hover h4 {
             color: hotpink;
         }
 
+        button:hover {
+            box-shadow: 0 6px 20px 1px hotpink;
+        }
+
+        .right-section.profile-card a:hover {
+            color: hotpink;
+        }
+
+        .socialmedia i {
+            color: black;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        .subscribe input[type=email]::placeholder {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        form input[type=text]::placeholder {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        form input[type=email]::placeholder {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 375px) {
+            .title a h1 {
+                font-size: 30px;
+            }
+
+            .caption p {
+                font-size: 16px;
+            }
+
+            .nav a:not(:last-child) {
+                display: none;
+            }
+
+            .nav {
+                justify-content: start;
+                position: sticky;
+                top: 0;
+                right: 0;
+            }
+
+            .social-icon {
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+                float: right;
+            }
+
+
+        }
     </style>
 </head>
 
 <body>
-    <div class="header" style="text-align: center; margin-top:50px; width: 100%;">
-        <div class="caption" style="font-family:sans-serif ; letter-spacing: 5px; font-size: 20px;">
-            <p>WITH THE NEW DAY COMES NEW STRENGTH.</p>
+    <div class="header" style="text-align: center; margin:40px 0 30px 0 ; width: 100%;">
+        <div class="caption" style="padding: 20px;">
+            <p style="font-family:sans-serif ; letter-spacing: 5px; font-size: 20px;">WITH THE NEW DAY COMES
+                NEW STRENGTH.</p>
         </div>
-        <div class="title">
-            <a style="text-decoration: none; color: black; font-size: 40px; letter-spacing: 2px; padding: 20px;"
-                href="#">
-                <h1>Train of thoughts</h1>
+        <div class="title" style="padding: 10px;">
+            <a style="text-decoration: none;" href="#">
+                <h1 style="color: black; font-size: 60px; letter-spacing: 2px;">Train of thoughts</h1>
             </a>
         </div>
     </div>
 
-    <ul class="nav"
-        style="display: flex; justify-content: center; list-style:none; border-top: 1px solid black; border-bottom: 1px solid black; width: 100%;">
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">My blog</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="social-icon" style="border-right: 1px solid black;"><a href="#"><i class="fa fa-facebook"
-                    aria-hidden="true"></i></a>
+    <div class="nav" id="mynav"
+        style=" background-color:white; display:flex; justify-content: center; align-items: center; list-style:none; border-top: 1px solid black; border-bottom: 1px solid black; width: 100%; overflow: hidden;">
+        <a class="active" href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">My blog</a>
+        <a href="#">Contact</a>
+        <div class="social-icon"
+            style="border-right: 1px solid black; border-left: 1px solid black; display: flex; align-self: center; padding: 0 20px;">
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><a href="#"><i class="fa fa-pinterest-p"
-                        aria-hidden="true"></i></a></a>
-    </ul>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></div>
+        <div class="hamburger"><a href="javascript:void(0);"
+                style="font-size: 16px; border: none; padding: 10px 20px; display: none;"
+                onclick="myFunction()">&#9776;</a>
+        </div>
+    </div>
+    <!-- <script>
+        function myFunction() {
+            var x = document.getElementById("mynav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+    </script> -->
 
     <div class="container-1" style="height: 804px; width: 100%; display: flex; justify-content: center;">
-        <div class="card" style="align-self: center; width: 938px;">
+        <div class="card" style="margin: 40px; align-self: center; width: 938px;">
             <div class="plate"
-                style="width: 384px; line-height: 62px; border: 1px solid black; position: relative; z-index: 2; background-color: white;">
-                <p style="font-family: sans-serif; font-size: 22px; letter-spacing: 8px; text-align: center; ">FEATURED
+                style="width: 40%; padding: 14px 12px; border: 1px solid black; position: relative; z-index: 2; background-color: white;">
+                <p style="font-family: sans-serif; font-size: 22px; letter-spacing: 8px; text-align: center; ">
+                    FEATURED
                     POST</p>
             </div>
 
@@ -104,10 +174,12 @@
                         <li style="list-style: none;">2 min</li>
                     </ul>
                     <a style="text-decoration: none;" href="#">
-                        <p style="color: black; font-size: 28px; font-weight: bold;">Back to Fiction: What I'm Reading
+                        <p style="color: black; font-size: 28px; font-weight: bold;">Back to Fiction: What I'm
+                            Reading
                             This Summer</p>
                     </a>
-                    <p style="font-weight: lighter; font-size: 16px;line-height: 150%; margin-top: 8px;">Create a blog
+                    <p style="font-weight: lighter; font-size: 16px;line-height: 150%; margin-top: 8px;">Create a
+                        blog
                         post subtitle that summarizes your post in a few short, punchy sentences and entices your
                         audience to continue reading. Welcome to your blog po...</p>
                 </div>
@@ -115,48 +187,216 @@
         </div>
     </div>
 
-    <div class="divider" style="border: 0.5px solid black; margin: 0 20px;"></div>
+    <hr style="margin: 0 20px; border: solid 0.5px black;">
 
     <div class="container-2" style="margin: 5px 0; height: 182px; display: flex;">
-        <div class="box-left" style="width: 50%; height: 100%;">
+        <div class="box-left" style="float: left; width: 50%; height: 100%;">
             <p style="font-size: 38px; text-align: center; line-height: 182px;">Never Miss a New Post</p>
         </div>
 
         <div class="box-right"
-            style="width: 50%; height: 100%; display: flex; justify-content: center; align-items: center;">
+            style="width: 50%; height: 100%; float: left; display: flex; justify-content: center; align-items: center;">
             <div class="email" style="border-bottom: 1px solid black; height: 25%; width: 40%;">
                 <input style="height: 100%; width: 100%; border: none;" type="email" placeholder="Email">
             </div>
 
             <div class="button"><button
-                    style="border: none; margin-left: 8px;background-color: hotpink; padding: 15px 37px; font-size: 16px; color: white; cursor: pointer;">Subscribe</button>
+                    style="border: none; margin-left: 8px;background-color: hotpink; padding: 15px 37px; font-size: 16px; color: white; cursor: pointer; transition: 0.3s; ">Subscribe</button>
             </div>
         </div>
     </div>
 
-    <div class="divider" style="border: 0.5px solid black; margin: 0 20px;"></div>
+    <hr style="margin: 0 20px; border: solid 0.5px black;">
 
-    <div class="container-3" style="margin: 5px 0; width: 100%; font-family: sans-serif; display: flex;">
-        <div class="left-section" style="background-color: rgb(255, 255, 255); width: 60%; ">
-            <p style="font-size: 22px; letter-spacing: 6px; font-weight: lighter; margin: 70px;">TRAIN OF
+    <div class="container-3" style="margin: 5px 0; width: 100%; font-family: sans-serif; display: flex; float:left">
+        <div class="left-section" style="background-color: white; width: 900px;">
+            <p style="font-size: 22px; letter-spacing: 6px; font-weight: lighter; margin: 70px 130px;">TRAIN OF
                 THOUGHTS</p>
 
             <div class="mini-card"
-                style=" background-color:white; border:1px solid black; display: flex; cursor: pointer; margin: 70px;">
+                style="width: 70%; background-color:white; border:1px solid black; display: flex; cursor: pointer; margin: 70px 130px;">
                 <img style="width: 50%;" src="images/7.png">
-                <div class="content" style="padding: 40px 48px; overflow: auto; width: 50%;">
-                    <ul style="font-weight: lighter; display:flex; font-size: 12px; margin-bottom:28px;">
+
+                <div class="content" style="width: 50%; padding: 40px 48px;">
+                    <ul style="font-weight: lighter; display:flex; font-size: 12px; margin-bottom: 28px;">
                         <li style="list-style: none; padding-right: 26px;">Mar18</li>
                         <li></li>
                         <li style="list-style: none;">5 min</li>
                     </ul>
-                        <h4 style="color: black; font-size: 23px; font-weight: bold;">Top 5 items under 20$ I can't live...</h4>
-                    <div class="description" style="height: 120px; overflow: hidden; margin-top: 10px;">
-                        <p style="font-weight: lighter; font-size: 16px;line-height: 150%;">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue ...</p>
-                    </div>
+                    <h4 style="color: black; font-size: 23px; font-weight: bold;">Top 5 items under 20$ I can't live...
+                    </h4>
+                    <p style="font-weight: lighter; font-size: 16px;line-height: 150%;margin-top: 10px;">Create a
+                        blog
+                        post subtitle
+                        that summarizes your post in a few short, punchy sentences and entices your audience to
+                        continue ...</p>
                 </div>
             </div>
+
+            <div class="mini-card"
+                style="width: 70%; background-color:white; border:1px solid black; display: flex; cursor: pointer; margin: 70px 130px;">
+                <img style="width: 50%;" src="images/8.png">
+
+                <div class="content" style="width: 50%; padding: 40px 48px;">
+                    <ul style="font-weight: lighter; display:flex; font-size: 12px; margin-bottom: 28px;">
+                        <li style="list-style: none; padding-right: 26px;">Mar18</li>
+                        <li></li>
+                        <li style="list-style: none;">5 min</li>
+                    </ul>
+                    <h4 style="color: black; font-size: 23px; font-weight: bold;">Top 5 items under 20$ I can't live...
+                    </h4>
+                    <p style="font-weight: lighter; font-size: 16px;line-height: 150%;margin-top: 10px;">Create a
+                        blog
+                        post subtitle
+                        that summarizes your post in a few short, punchy sentences and entices your audience to
+                        continue ...</p>
+                </div>
+            </div>
+
+            <div class="mini-card"
+                style="width: 70%; background-color:white; border:1px solid black; display: flex; cursor: pointer; margin: 70px 130px;">
+                <img style="width: 50%;" src="images/9.jpg">
+
+                <div class="content" style="width: 50%; padding: 40px 48px;">
+                    <ul style="font-weight: lighter; display:flex; font-size: 12px; margin-bottom: 28px;">
+                        <li style="list-style: none; padding-right: 26px;">Mar18</li>
+                        <li></li>
+                        <li style="list-style: none;">5 min</li>
+                    </ul>
+                    <h4 style="color: black; font-size: 23px; font-weight: bold;">Top 5 items under 20$ I can't live...
+                    </h4>
+                    <p style="font-weight: lighter; font-size: 16px;line-height: 150%;margin-top: 10px;">Create a
+                        blog
+                        post subtitle
+                        that summarizes your post in a few short, punchy sentences and entices your audience to
+                        continue ...</p>
+                </div>
+            </div>
+
+            <div class="mini-card"
+                style="width: 70%; background-color:white; border:1px solid black; display: flex; cursor: pointer; margin: 70px 130px;">
+                <img style="width: 50%;" src="images/10.jpg">
+
+                <div class="content" style="width: 50%; padding: 40px 48px;">
+                    <ul style="font-weight: lighter; display:flex; font-size: 12px; margin-bottom: 28px;">
+                        <li style="list-style: none; padding-right: 26px;">Mar18</li>
+                        <li></li>
+                        <li style="list-style: none;">5 min</li>
+                    </ul>
+                    <h4 style="color: black; font-size: 23px; font-weight: bold;">Top 5 items under 20$ I can't live...
+                    </h4>
+                    <p style="font-weight: lighter; font-size: 16px;line-height: 150%;margin-top: 10px;">Create a
+                        blog
+                        post subtitle
+                        that summarizes your post in a few short, punchy sentences and entices your audience to
+                        continue ...</p>
+                </div>
+            </div>
+
+            <div class="mini-card"
+                style="width: 70%; background-color:white; border:1px solid black; display: flex; cursor: pointer; margin: 70px 130px;">
+                <img style="width: 50%;" src="images/7.png">
+
+                <div class="content" style="width: 50%; padding: 40px 48px;">
+                    <ul style="font-weight: lighter; display:flex; font-size: 12px; margin-bottom: 28px;">
+                        <li style="list-style: none; padding-right: 26px;">Mar18</li>
+                        <li></li>
+                        <li style="list-style: none;">5 min</li>
+                    </ul>
+                    <h4 style="color: black; font-size: 23px; font-weight: bold;">Top 5 items under 20$ I can't live...
+                    </h4>
+                    <p style="font-weight: lighter; font-size: 16px;line-height: 150%;margin-top: 10px;">Create a
+                        blog
+                        post subtitle
+                        that summarizes your post in a few short, punchy sentences and entices your audience to
+                        continue ...</p>
+                </div>
+            </div>
+
+            <div class="more button" style="margin: 70px 130px;display: flex; justify-content: center;">
+                <button
+                    style="border: none; padding: 14px 20px; font-size: 16px; color: white; background-color: hotpink; width: 30%;">More
+                    posts</button>
+            </div>
         </div>
+
+        <hr style="margin: 0 20px; border: solid 0.5px black;">
+
+        <div class="right-section" style="background-color: rgb(255, 255, 255); width: 500px;">
+            <p style="font-size: 22px; letter-spacing: 6px; font-weight: lighter; margin: 70px 130px;">ABOUT ME</p>
+
+            <div class="profile-card"
+                style="margin: 60px 130px 0; padding-bottom: 60px; border-bottom: 1px solid black;">
+                <img src="images/11.png" style="border: 1px solid black; width: 100%;">
+                <p style="padding: 30px 0; font-weight: lighter; font-size: 16px; line-height: 150%;">I'm a paragraph.
+                    Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to
+                    add your own content and make changes to the font.</p>
+
+                <a style="text-decoration: none; color: black;font-weight: lighter; font-size: 16px;"
+                    href="#readmore">Read More ></a>
+            </div>
+
+            <p style="font-size: 22px; letter-spacing: 6px; font-weight: lighter; margin: 70px 130px;">FOLLOW ME</p>
+
+            <div class="album" style="margin: 60px 130px 0; padding-bottom: 60px; display: flex; flex-wrap: wrap;">
+                <img src="images/12.jpeg" style="width: 48%; margin-right: 4px; margin-bottom: 8px;">
+                <img src="images/13.jpg" style="width: 48%; margin-left: 4px; margin-bottom: 8px;">
+                <img src="images/15.jpeg" style="width: 48%; margin-right: 4px; margin-bottom: 8px;">
+                <img src="images/16.jpeg" style="width: 48%; margin-left: 4px; margin-bottom: 8px;">
+                <img src="images/17.jpg" style="width: 48%; margin-right: 4px; margin-bottom: 8px;">
+                <img src="images/18.jpg" style="width: 48%; margin-left: 4px; margin-bottom: 8px;">
+            </div>
+
+            <div class="socialmedia"
+                style="margin: 0 130px 70px ; border-top: 1px solid black; border-bottom: 1px solid black; display: flex; align-self: center; justify-content: center; padding: 0 20px;">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+            </div>
+
+            <p style="font-size: 22px; letter-spacing: 6px; font-weight: lighter; margin: 70px 130px;">SUBSCRIBE</p>
+            <div class="subscribe" style="margin: 0 130px 70px; padding-bottom: 70px; border-bottom: 1px solid black;">
+                <input type="email" placeholder="Email"
+                    style="border: 1px solid black; box-sizing: border-box; width: 100%; padding: 14px 0; margin-bottom: 10px;">
+                <button
+                    style="padding: 14px 20px; border: none; background-color: hotpink; color: white; font-size: 16px; width: 100%;">Subscribe</button>
+            </div>
+
+            <p
+                style="font-size: 22px; letter-spacing: 6px; font-weight: lighter; margin: 70px 130px 0; line-height: 180%;">
+                MY PICK OF THE MONTH</p>
+
+            <div class="profile-card" style="margin: 60px 130px 0; padding-bottom: 30px;">
+                <img src="images/19.jpg" style="border: 1px solid black; width: 100%;">
+                <p style="padding: 60px 0; font-weight: lighter; font-size: 16px; line-height: 150%;">I'm a paragraph.
+                    Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to
+                    add your own content and make changes to the font.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin: 0 20px; border: solid 0.5px black;">
+
+    <div class="feedback" style="background-color: white;">
+
+        <p style="font-size: 40px; font-weight: bold; text-align: center; padding: 60px; margin-top: 70px;">Drop me a
+            line, let me know what you think</p>
+
+        <form action="/action_page.php" target="_blank" style="margin: 30px 340px;">
+            <div class="firstline" style="display: flex; justify-content: space-between; padding-bottom: 40px;">
+                <input type="text" placeholder="Name"
+                    style="border: none; border-bottom: 1px solid black; padding: 10px 0; width: 49%;">
+                <input type="email" placeholder="Email"
+                    style="border: none; border-bottom: 1px solid black; padding: 10px 0; width: 49%;">
+            </div>
+            <input type="text" placeholder="Leave yoru message here"
+                style="border: none; border-bottom: 1px solid black; padding: 10px 0; width: 100%;">
+            <div style="display: flex; justify-content: center;margin: 60px 0;">
+                <input type="submit" value="Submit"
+                    style="border: none; font-size: 16px; color: white; background-color: hotpink; padding: 14px 20px; width: 30%;">
+            </div>
+        </form>
     </div>
 
 </body>
